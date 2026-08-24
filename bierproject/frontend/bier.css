@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("../img/Duits-bier.jpg");
+    background-size: cover;        /* vult hele pagina */
+    background-position: center;   /* netjes gecentreerd */
+    background-repeat: no-repeat;
+    background-attachment: fixed;  /* blijft staan bij scrollen */
+}
+
+ 
+.titel {
+            color: #ffffff;
+            text-align: center;
+        }
+
+ table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+
+        #tableContainer {
+    max-width: 90%;
+    margin: 40px auto;
+
+    background: rgba(155, 155, 155, 0.2); /* doorzichtig */
+    backdrop-filter: blur(135px);
+    -webkit-backdrop-filter: blur(10px); /* Safari */
+
+    border-radius: 15px;
+    padding: 20px;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+table {
+    background: rgba(255, 255, 255, 0.2); /* doorzichtig */
+    width: 100%;
+    border-collapse: collapse;
+    color: #000;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: rgba(255, 255, 255, 0.212);
+}
+
+tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.032);
+}
+
+#addBtn {
+    background-color: #ffffff;     
+    color: rgb(0, 0, 0);           
+    border: none;          
+    padding: 10px 20px;        
+    font-size: 16px;                
+    font-weight: bold;     
+    border-radius: 8px;            
+    cursor: pointer;            
+    transition: all 0.3s ease;      
+}
+
+
+#addBtn:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+}
+
+
+#addBtn:active {
+    transform: scale(0.95);
+}
+
+#deleteBtn {
+
+    display: none;
+}

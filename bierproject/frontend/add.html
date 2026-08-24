@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bier toevoegen</title>
+</head>
+<body>
+
+<h2>Bier toevoegen</h2>
+
+
+Naam:<br>
+<input type="text" name="naam" required><br><br>
+
+Brouwer:<br>
+<input type="text" name="brouwer" required><br><br>
+
+Type:<br>
+<input type="text" name="type" required><br><br>
+
+Gisting:<br>
+<input type="text" name="gisting" required><br><br>
+
+Alcohol %:<br>
+<input type="number" step="0.1" name="perc" required><br><br>
+
+Inkoop prijs:<br>
+<input type="number" step="0.01" name="inkoop_prijs" required><br><br>
+
+Soort:<br>
+<input type="text" name="soort" required><br><br>
+
+<button onclick="voegBierToe()">Bier opslaan</button>
+
+<script>
+    function voegBierToe() {
+        const naam = document.querySelector('input[name="naam"]').value;
+        const brouwer = document.querySelector('input[name="brouwer"]').value;
+        const type = document.querySelector('input[name="type"]').value;
+        const gisting = document.querySelector('input[name="gisting"]').value;
+        const perc = document.querySelector('input[name="perc"]').value;
+        const inkoop_prijs = document.querySelector('input[name="inkoop_prijs"]').value;
+        const soort = document.querySelector('input[name="soort"]').value;
+
+        fetch('http://localhost/bierproject/bier.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                naam: naam,
+                brouwer: brouwer,
+                type: type,
+                gisting: gisting,
+                perc: perc,
+                inkoop_prijs: inkoop_prijs,
+                soort: soort
+            })
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>
+
+<br>
+<a href="front.html">⬅ Terug</a>
+
+</body>
+</html>
